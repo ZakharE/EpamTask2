@@ -1,0 +1,67 @@
+public static University readFromFile(String filename) {
+    File file = new File(filename);
+    University university = null;
+    Scanner in = null;
+    try {
+        in = new Scanner(file);
+        String str = in.nextLine();
+        Scanner in2 = new Scanner(str).useDelimiter(":");
+        in2.next();
+        String uName = in2.next();
+
+        //Read University info
+        str = in.nextLine();
+        in2 = new Scanner(str).useDelimiter(":");
+        in2.next();
+        String uTerm = in2.next();
+        str = in.nextLine();
+        in2 = new Scanner(str).useDelimiter(":");
+        in2.next();
+        int uYear = in2.nextInt();
+        str = in.nextLine();
+        in2 = new Scanner(str).useDelimiter(":");
+        in2.next();
+        int uNumStudents = in2.nextInt();
+        str = in.nextLine();
+        in2 = new Scanner(str).useDelimiter(":");
+        in2.next();
+        int uNumInstructors = in2.nextInt();
+        str = in.nextLine();
+        in2 = new Scanner(str).useDelimiter(":");
+        in2.next();
+        int uNumCourses = in2.nextInt();
+
+        //Create and read arrays of objects
+        Student[] uStudents = new Student[uNumStudents];
+        for(int i = 0; i < uNumStudents; i++)
+                        uStudents[i] = readStudent(in);
+
+        Instructor[] uInstructors = new Instructor[uNumInstructors];
+        for(int i = 0; i < uNumInstructors; i++)
+                        uInstructors[i] = readInstructor(in);
+
+                    //Create array of possible TAs to pass into readCourse method
+                    GradStudent[] gStudents = new GradStudent[uNumStudents];
+                    for(int j=0; j<uStudents.length; j++) {
+                        for(int i=0; i<uStudents.length; i++) {
+                            if(uStudents[i] instanceof GradStudent)
+                                gStudents[j] = (GradStudent) uStudents[i];
+                        }
+                    }
+
+        Course[] uCourses = new Course[uNumCourses];
+        for(int i = 0; i < uNumCourses; i++)
+                        uCourses[i] = readCourse(in, uInstructors, gStudents, uStudents);
+
+        //Create University object
+        university = new University(uName, uTerm, uYear, uStudents, uInstructors, uCourses);
+        return university;
+
+    } catch (com.epam.custom_exeptions.EmptyFileException e) {
+        e.toString();
+        return null;
+    } catch (FileNotFoundException fe) {
+        fe.printStackTrace();
+        return null;
+    }
+}
