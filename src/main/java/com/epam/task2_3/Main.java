@@ -17,9 +17,7 @@ public class Main {
         // file reader as a parameter
         CSVReader csvReader = new CSVReader(filereader);
 
-        List<String[]> data = csvReader.readAll();
 
-        System.out.println(data);
 
     }
 }

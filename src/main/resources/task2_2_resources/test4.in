@@ -57,7 +57,7 @@ public static University readFromFile(String filename) {
         university = new University(uName, uTerm, uYear, uStudents, uInstructors, uCourses);
         return university;
 
-    } catch (com.epam.custom_exeptions.EmptyFileException e) {
+    } catch (com.com.epam.custom_exeptions.EmptyFileException e) {
         e.toString();
         return null;
     } catch (FileNotFoundException fe) {
