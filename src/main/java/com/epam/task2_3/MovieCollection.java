@@ -1,30 +1,27 @@
 package com.epam.task2_3;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class MovieCollection extends LinkedList {
-    private List<Movie> collection;
+public class MovieCollection extends AbstractList implements Serializable {
+
+    private  ArrayList<Movie> collection;
 
     public MovieCollection() {
-        collection = new ArrayList<>();
-    }
-    public void addMovie(Movie movie) {
-        collection.add(movie);
-    }
-    public Movie getMovie(String title) {
-        if(collection.contains(title)){
-            return collection.get()
-        }
+        this.collection = new ArrayList<>();
     }
 
-    public boolean contains(String title) {
-        for (Movie m:
-             collection) {
-            if(m.getTitle().equals(title)) {
-                return true;
-            }
-        }
+    @Override
+    public int size() {
+        return collection.size();
+    }
 
-        return false;
+    @Override
+    public Movie get(int index) {
+        return collection.get(index);
+    }
+
+    public void add(Movie m){
+        collection.add(m);
     }
 }

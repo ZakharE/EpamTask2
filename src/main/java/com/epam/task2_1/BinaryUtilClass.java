@@ -36,7 +36,8 @@ public class BinaryUtilClass {
             throw new FileNotFoundException("Input file doesn't exist!");
         }
         inFile = new FileInputStream(filePath);
-        dataFromFile = inFile.readAllBytes();
+        dataFromFile = new byte[(int) inputFile.length()];
+        inFile.read(dataFromFile);
         inFile.close();
         return dataFromFile;
     }
