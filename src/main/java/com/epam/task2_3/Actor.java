@@ -6,13 +6,13 @@ import java.util.Date;
 import java.util.List;
 
 public class Actor implements Serializable {
-    String name;
-    Date birthDay;
-    ArrayList<String> cinemagraphy;
+    private String name;
+    private Date birthDay;
+
+
 
     public Actor(String name) {
         this.name = name;
-        this.cinemagraphy = new ArrayList<>();
     }
 
     public Actor(String name, Date birthDay) {
@@ -20,24 +20,37 @@ public class Actor implements Serializable {
         this.birthDay = birthDay;
     }
 
-    public Actor(String name, Date birthDay, ArrayList<String> cinemagraphy) {
-        this(name, birthDay);
-        this.cinemagraphy = cinemagraphy;
+    public Actor(Actor actor){
+        this.name = actor.name;
     }
 
-
-    public void addMovie(String  movie) {
-        cinemagraphy.add(movie);
+    public String getName() {
+        return name;
     }
+
 
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder("My name is " + name + " ");
-        result.append("and these are my movies:\n");
-        for(String s : cinemagraphy){
-            result.append(s + "\n");
-        }
         return result.toString();
     }
 
+    @Override
+    public boolean equals(Object o) {
+
+        if (o == this) {
+            return true;
+        }
+
+        if (!(o instanceof Actor)) {
+            return false;
+        }
+
+        Actor actor = (Actor) o;
+
+        return name.equals(actor.name);
+    }
 }
+
+
+

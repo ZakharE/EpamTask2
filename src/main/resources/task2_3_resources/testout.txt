@@ -1,0 +1,2 @@
+¬н sr java.util.ArrayListxЃТ™Зaќ I sizexp   w   sr com.epam.task2_3.Movie
+|vјЬ®e L castt Ljava/util/ArrayList;L titlet Ljava/lang/String;xpsq ~     w   sr com.epam.task2_3.ActorњД(-№<о L birthDayt Ljava/util/Date;L nameq ~ xppt Leosq ~ pt jacksonsq ~ pt samsq ~ pt Dioxt Hate 8sq ~ q ~ t Titanicsq ~ q ~ t Jojox

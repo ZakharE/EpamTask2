@@ -1,8 +1,8 @@
-catch: 2
 new: 13
 static: 1
-try: 1
 public: 1
+try: 1
+catch: 2
 int: 4
-instanceof: 1
 return: 3
+instanceof: 1
