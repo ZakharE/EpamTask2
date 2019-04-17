@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class MovieCollection  implements Serializable {
 
-    private  ArrayList<Movie> collection;
+    private  List<Movie> collection;
 
     public MovieCollection() {
         this.collection = new ArrayList<>();

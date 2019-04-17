@@ -30,10 +30,5 @@ public class Main {
         collectionFromFile.readFromFile("D:\\Projects\\EpamTask2\\src\\main\\resources\\task2_3_resources\\save.out");
 
         System.out.println(collection.actorCinematography("Leo"));
-
-
-
-
-
     }
 }

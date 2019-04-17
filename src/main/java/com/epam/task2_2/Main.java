@@ -8,9 +8,6 @@ public class Main {
     public static void main(String[] args) {
         String inFileName = "D:\\Projects\\EpamTask2\\src\\main\\resources\\task2_2_resources\\test4.in";
         String outFileName = "D:\\Projects\\EpamTask2\\src\\main\\resources\\task2_2_resources\\test4.out";
-
-
-
         try {
             SymbolUtilClass.counter(inFileName,outFileName);
         } catch(IOException e) {

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UtilWordCount {
-    static final String keywords[] = {"abstract", "assert", "boolean",
+    private static final String keywords[] = {"abstract", "assert", "boolean",
             "break", "byte", "case", "catch", "char", "class", "const",
             "continue", "default", "do", "double", "else", "extends", "false",
             "final", "finally", "float", "for", "goto", "if", "implements",
@@ -19,7 +19,7 @@ public class UtilWordCount {
     public static Map<String, Integer> javaWordsCount(String data) {
         Map<String, Integer> javaWordsCounter = new HashMap<>();
 
-        for (String s : data.split(" ")) {
+        for (String s : data.split("[^A-za-z]")) {
             if (javaWordsCounter.containsKey(s)) {
                 javaWordsCounter.replace(s, javaWordsCounter.get(s) + 1);
             } else {

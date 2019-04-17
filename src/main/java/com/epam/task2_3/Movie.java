@@ -1,19 +1,16 @@
 package com.epam.task2_3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.Iterator;
+import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class Movie implements Serializable {
     private String title;
 
-    private ArrayList<Actor> cast;
+    private List<Actor> cast;
 
-    public static Comparator<Movie> comparator = Comparator.comparing(obj -> obj.getTitle());
+    public static Comparator<Movie> comparator = Comparator.comparing(Movie::getTitle);
 
 
     public Movie(String title) {
@@ -39,6 +36,9 @@ public class Movie implements Serializable {
 
     @Override
     public boolean equals(Object o) {
+        if( o == null ) {
+            return false;
+        }
 
         if (o == this) {
             return true;
@@ -48,10 +48,8 @@ public class Movie implements Serializable {
             return false;
         }
 
-        // typecast o to Complex so that we can compare data members
         Movie movie = (Movie) o;
 
-        // Compare the data members and return accordingly
         return title.equals(movie.title);
     }
 }

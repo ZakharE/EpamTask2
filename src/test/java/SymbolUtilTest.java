@@ -39,11 +39,14 @@ public class SymbolUtilTest {
         String answer = "new: 13\n" +
                 "static: 1\n" +
                 "public: 1\n" +
+                "null: 4\n" +
+                "for: 5\n" +
                 "try: 1\n" +
                 "catch: 2\n" +
-                "int: 4\n" +
+                "if: 1\n" +
+                "int: 9\n" +
                 "return: 3\n" +
-                "instanceof: 1\n";
+                "instanceof: 1";
         String outputFileName = "D:\\Projects\\EpamTask2\\src\\main\\resources\\task2_2_resources\\test4.out";
 
         Assert.assertEquals("The files differ!", answer,
