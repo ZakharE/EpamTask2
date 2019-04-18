@@ -59,14 +59,10 @@ public class BinaryUtilClass {
                 System.out.println(entry.getKey() + ": " + entry.getValue());
             }
         }
-
-        File outputFile = new File(outFileName);
-        if(!outputFile.exists()) {
-            throw new FileNotFoundException("Output file doesn't exist!");
+        try(BufferedOutputStream br = new BufferedOutputStream(new FileOutputStream(outFileName))){
+          br.write(beforeBinaryArray.toString().getBytes());
+            System.out.println("asdad");
         }
-        FileOutputStream outFile = new FileOutputStream(outFileName);
-        outFile.write(beforeBinaryArray.toString().getBytes());
-        outFile.close();
     }
 }
 

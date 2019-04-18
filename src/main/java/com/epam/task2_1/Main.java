@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
         String inFileName = "D:\\Projects\\EpamTask2\\src\\main\\resources\\task2_1_resources\\test4.in";
-        String outFileName = "D:\\Projects\\IOstreams\\src\\main\\resources\\task2_1_resources\\test4.out";
+        String outFileName = "D:\\Projects\\EpamTask2\\src\\main\\resources\\task2_1_resources\\test4.out";
         try {
             BinaryUtilClass.counter(inFileName,outFileName);
         } catch(IOException e) {
