@@ -61,7 +61,6 @@ public class BinaryUtilClass {
         }
         try(BufferedOutputStream br = new BufferedOutputStream(new FileOutputStream(outFileName))){
           br.write(beforeBinaryArray.toString().getBytes());
-            System.out.println("asdad");
         }
     }
 }
