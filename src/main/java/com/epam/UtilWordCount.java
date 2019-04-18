@@ -19,7 +19,7 @@ public class UtilWordCount {
     public static Map<String, Integer> javaWordsCount(String data) {
         Map<String, Integer> javaWordsCounter = new HashMap<>();
 
-        for (String s : data.split("[^A-za-z]")) {
+        for (String s : data.split("[^A-z]")) {
             if (javaWordsCounter.containsKey(s)) {
                 javaWordsCounter.replace(s, javaWordsCounter.get(s) + 1);
             } else {
